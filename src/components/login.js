@@ -10,6 +10,7 @@ function Login() {
     //defining hooks for storing input values given by user
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
+    //if user is loggedIn then we redirect him to Profile page for reseting password
     const [loggedIn,setLoggedIn] = useState(false)
 
     const login = () =>{
