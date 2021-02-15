@@ -3,9 +3,11 @@ import { Link,useHistory } from "react-router-dom";
 import M from 'materialize-css'
 import Profile from './profile';
 
+//implementing Login logic
+
 function Login() {
 
-    const history = useHistory()
+    //defining hooks for storing input values given by user
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
     const [loggedIn,setLoggedIn] = useState(false)
@@ -21,6 +23,9 @@ function Login() {
             return
         }
 
+        //making an api call to localhost:8080/login 
+        //config for cors policy is added in package.json file        
+
         fetch("/login",{
             method:"post",
             headers:{
@@ -33,6 +38,7 @@ function Login() {
         })
         .then(res=>res.json())
         .then(data=>{
+            //receiving data fetched from spring boot api 
             console.log("Data : " + data)
             if(data==="SUCCESS"){
                 setLoggedIn(true)
@@ -40,7 +46,6 @@ function Login() {
                     html:"logged in successfully",
                     classes:"#388e3c green darken-2"
                 })
-                //history.push('/profile')
             }
             else{
                 M.toast({
