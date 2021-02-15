@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//home page for 3 buttons login register and signup
+
 function Home() {
     return (
             <div className="home-card">
