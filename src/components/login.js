@@ -25,7 +25,7 @@ function Login() {
         }
 
         //making an api call to localhost:8080/login 
-        //config for cors policy is added in package.json file        
+        //config related to cors policy is added in package.json file line no:5       
 
         fetch("/login",{
             method:"post",
