@@ -2,6 +2,8 @@ import React,{ useState } from 'react'
 import { useHistory } from "react-router-dom";
 import M from 'materialize-css'
 
+//reset logic
+
 function Reset() {
 
     const history = useHistory()
@@ -23,8 +25,8 @@ function Reset() {
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                email,
-                password
+                email,                      // if email entered by user exists in DB then only we allow user to change password
+                password                    // even though a logged in user is required to enter email if in case hacker hacks into 
             })
         })
         .then(res=>res.json())
