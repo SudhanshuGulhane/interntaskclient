@@ -26,7 +26,7 @@ function Reset() {
             },
             body:JSON.stringify({
                 email,                      // if email entered by user exists in DB then only we allow user to change password
-                password                    // even though a logged in user is required to enter email if in case hacker hacks into 
+                password                    // even though a logged in user is required to enter his/her email
             })
         })
         .then(res=>res.json())
