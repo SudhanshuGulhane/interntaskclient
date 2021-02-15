@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//implementing profile page with link for reseting password
+
 function Profile(props) {
     return (
         <div>
