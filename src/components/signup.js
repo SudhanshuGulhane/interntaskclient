@@ -2,6 +2,8 @@ import React,{ useState } from 'react'
 import { Link, useHistory } from "react-router-dom";
 import M from 'materialize-css'
 
+//implementing Registeration logic
+
 function Signup() {
 
     const history = useHistory()
@@ -41,6 +43,8 @@ function Signup() {
         .then(data=>{
             console.log("Data : " + data)
             if(data==="SUCCESS"){
+                //if user is not found in db then as per data returned by spring boot api 
+                //we redirect user to login page
                 M.toast({
                     html:"Saved Successfully",
                     classes:"#388e3c green darken-2"
